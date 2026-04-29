@@ -1,11 +1,38 @@
 ---
 ---
-<header class="sticky top-0 z-50 border-b border-surface-200 bg-surface-50/80 backdrop-blur-lg">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-    <a href="/" class="text-lg font-bold tracking-tight text-surface-900 font-display">Your New Business</a>
-    <div class="flex items-center gap-6">
-      <a href="/blog" class="text-sm font-medium text-surface-800/60 hover:text-surface-900 transition-colors">Blog</a>
-      <a href="#cta" class="text-sm font-semibold bg-brand-500 text-white px-4 py-2 rounded-lg hover:bg-brand-600 transition-colors">Get Started</a>
+<header class="sticky top-0 z-50 backdrop-blur-xl" style="
+  background: oklch(0.09 0.02 280 / 0.85);
+  border-bottom: 1px solid oklch(0.60 0.26 10 / 0.18);
+  box-shadow: 0 1px 0 oklch(0.87 0.20 88 / 0.06);
+">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2.5 group">
+      <!-- Robot icon -->
+      <div class="w-8 h-8 rounded-lg flex items-center justify-center text-lg transition-transform duration-200 group-hover:scale-110" style="background: oklch(0.60 0.26 10 / 0.18); border: 1px solid oklch(0.60 0.26 10 / 0.5); box-shadow: 0 0 12px oklch(0.60 0.26 10 / 0.25);">
+        🤖
+      </div>
+      <span class="font-display text-xl tracking-tight" style="color: oklch(0.95 0.005 280);">
+        Robo<span style="color: oklch(0.60 0.26 10); text-shadow: 0 0 16px oklch(0.60 0.26 10 / 0.6);">Fête</span>
+      </span>
+    </a>
+
+    <!-- Nav links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#packages" class="text-sm font-medium transition-colors duration-150 hover:opacity-100" style="color: oklch(0.62 0.01 280); font-family: var(--font-body);" onmouseover="this.style.color='oklch(0.95 0.005 280)'" onmouseout="this.style.color='oklch(0.62 0.01 280)'">Packages</a>
+      <a href="#how-it-works" class="text-sm font-medium transition-colors duration-150" style="color: oklch(0.62 0.01 280); font-family: var(--font-body);" onmouseover="this.style.color='oklch(0.95 0.005 280)'" onmouseout="this.style.color='oklch(0.62 0.01 280)'">How It Works</a>
+      <a href="/blog" class="text-sm font-medium transition-colors duration-150" style="color: oklch(0.62 0.01 280); font-family: var(--font-body);" onmouseover="this.style.color='oklch(0.95 0.005 280)'" onmouseout="this.style.color='oklch(0.62 0.01 280)'">Blog</a>
     </div>
+
+    <!-- CTA -->
+    <a
+      href="#book"
+      class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all duration-200 hover:scale-105 hover:opacity-90"
+      style="background: oklch(0.60 0.26 10); font-family: var(--font-body); box-shadow: 0 0 16px oklch(0.60 0.26 10 / 0.35);"
+    >
+      Book a Robot
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+    </a>
   </nav>
 </header>

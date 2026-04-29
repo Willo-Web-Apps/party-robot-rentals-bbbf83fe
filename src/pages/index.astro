@@ -1,35 +1,634 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Your New Business" description="Robot rentals for parties and events to entertain">
-  <!-- Hero — the Product Agent will replace this entire page -->
-  <section class="relative min-h-[80vh] flex items-center overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-brand-500/5 via-surface-50 to-brand-500/10"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
-      <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-surface-900 font-display max-w-4xl mx-auto leading-[1.1] animate-slide-up">
-        Your New Business
-      </h1>
-      <p class="mt-6 text-lg md:text-xl text-surface-800/60 max-w-2xl mx-auto leading-relaxed animate-slide-up delay-100">
-        Robot rentals for parties and events to entertain
-      </p>
-      <div class="mt-10 animate-slide-up delay-200">
-        <a href="#cta" class="inline-block px-8 py-3.5 bg-brand-500 text-white font-semibold rounded-lg hover:bg-brand-600 transition-colors text-base">
-          Get Started
-        </a>
+<Base
+  title="RoboFête — Robot Rentals for Unforgettable Parties & Events"
+  description="Rent jaw-dropping LED and humanoid robots for birthdays, quinceañeras, weddings, and corporate events. Instant quotes, transparent pricing, guaranteed wow factor."
+>
+
+  <!-- =====================================================================
+       HERO
+       ===================================================================== -->
+  <section class="relative min-h-screen flex items-center overflow-hidden" style="background: oklch(0.09 0.02 280);">
+
+    <!-- Layered gradient background -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <!-- Primary glow — rose, top-left offset -->
+      <div style="
+        position: absolute;
+        width: 70vw; height: 70vw;
+        top: -20%; left: -15%;
+        background: radial-gradient(ellipse at center, oklch(0.60 0.26 10 / 0.22) 0%, transparent 65%);
+        filter: blur(8px);
+      "></div>
+      <!-- Secondary glow — gold, bottom-right -->
+      <div style="
+        position: absolute;
+        width: 55vw; height: 55vw;
+        bottom: -25%; right: -10%;
+        background: radial-gradient(ellipse at center, oklch(0.87 0.20 88 / 0.18) 0%, transparent 65%);
+        filter: blur(12px);
+      "></div>
+      <!-- Cyan accent — mid-right -->
+      <div style="
+        position: absolute;
+        width: 35vw; height: 35vw;
+        top: 35%; right: 5%;
+        background: radial-gradient(ellipse at center, oklch(0.72 0.18 200 / 0.12) 0%, transparent 65%);
+        filter: blur(10px);
+      "></div>
+      <!-- Noise texture overlay -->
+      <div style="
+        position: absolute; inset: 0;
+        background-image: url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;);
+        opacity: 0.035;
+        mix-blend-mode: overlay;
+      "></div>
+    </div>
+
+    <div class="relative w-full max-w-7xl mx-auto px-6 lg:px-10 py-24 md:py-32 lg:py-40 grid lg:grid-cols-2 gap-12 lg:gap-0 items-center">
+
+      <!-- Left: Text -->
+      <div class="relative z-10">
+        <!-- Badge -->
+        <div class="animate-slide-up inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full text-xs font-semibold tracking-widest uppercase" style="
+          background: oklch(0.60 0.26 10 / 0.14);
+          border: 1px solid oklch(0.60 0.26 10 / 0.50);
+          color: oklch(0.82 0.14 10);
+        ">
+          <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background: oklch(0.60 0.26 10); box-shadow: 0 0 8px 2px oklch(0.60 0.26 10 / 0.8);"></span>
+          Now Booking · Summer 2025
+        </div>
+
+        <!-- Headline -->
+        <h1 class="animate-slide-up delay-100 font-display leading-[0.95] tracking-tight" style="font-size: clamp(2.8rem, 7vw, 5.5rem); color: oklch(0.95 0.005 280);">
+          Your Party Just Got<br>
+          <span class="gradient-text">a Futuristic Upgrade</span>
+        </h1>
+
+        <!-- Sub -->
+        <p class="animate-slide-up delay-200 mt-7 text-lg md:text-xl leading-relaxed max-w-xl" style="color: oklch(0.78 0.01 280);">
+          Rent a jaw-dropping LED or humanoid robot that dances, poses, and creates electric moments your guests will talk about for years.
+        </p>
+
+        <!-- CTA row -->
+        <div class="animate-slide-up delay-300 mt-10 flex flex-wrap items-center gap-4">
+          <a
+            href="#packages"
+            class="animate-pulse-glow inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg text-white transition-all duration-200 hover:scale-105"
+            style="background: oklch(0.60 0.26 10); font-family: var(--font-body);"
+          >
+            See Robot Packages
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </a>
+          <a href="#how-it-works" class="inline-flex items-center gap-2 px-6 py-4 rounded-xl font-medium text-base transition-all duration-200 hover:opacity-80" style="color: oklch(0.78 0.01 280); border: 1px solid oklch(0.78 0.01 280 / 0.3);">
+            How it works
+          </a>
+        </div>
+
+        <!-- Micro-proof -->
+        <div class="animate-fade-in delay-400 mt-10 flex flex-wrap items-center gap-6">
+          <div class="flex items-center gap-2">
+            <div class="flex -space-x-2">
+              <!-- Avatar placeholders -->
+              <div class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold" style="border-color: oklch(0.09 0.02 280); background: oklch(0.60 0.26 10);">J</div>
+              <div class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold" style="border-color: oklch(0.09 0.02 280); background: oklch(0.87 0.20 88); color: oklch(0.09 0.02 280);">M</div>
+              <div class="w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold" style="border-color: oklch(0.09 0.02 280); background: oklch(0.72 0.18 200);">A</div>
+            </div>
+            <span class="text-sm" style="color: oklch(0.70 0.01 280);">
+              <strong style="color: oklch(0.87 0.20 88);">500+</strong> events electrified
+            </span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <div class="flex gap-0.5">
+              {[1,2,3,4,5].map(() => (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="14" height="14" style="color: oklch(0.87 0.20 88);"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd"/></svg>
+              ))}
+            </div>
+            <span class="text-sm" style="color: oklch(0.70 0.01 280);">4.9 average rating</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Visual element — glowing robot display -->
+      <div class="relative flex items-center justify-center lg:justify-end" aria-hidden="true">
+        <!-- Floating orb behind -->
+        <div class="animate-float-orb absolute" style="
+          width: min(480px, 85vw); height: min(480px, 85vw);
+          border-radius: 50%;
+          background: radial-gradient(ellipse at 40% 40%,
+            oklch(0.60 0.26 10 / 0.28) 0%,
+            oklch(0.87 0.20 88 / 0.12) 45%,
+            transparent 70%
+          );
+          filter: blur(4px);
+        "></div>
+
+        <!-- Robot silhouette card -->
+        <div class="relative z-10 rounded-2xl overflow-hidden" style="
+          width: min(360px, 78vw);
+          aspect-ratio: 3/4;
+          background: linear-gradient(160deg,
+            oklch(0.14 0.025 280) 0%,
+            oklch(0.11 0.02 280) 60%,
+            oklch(0.10 0.025 10) 100%
+          );
+          border: 1px solid oklch(0.60 0.26 10 / 0.35);
+          box-shadow: 0 0 0 1px oklch(0.60 0.26 10 / 0.15),
+                      0 32px 64px -16px oklch(0.09 0.02 280),
+                      inset 0 1px 0 oklch(0.95 0.005 280 / 0.06);
+        ">
+          <!-- Decorative grid lines -->
+          <div style="
+            position:absolute; inset:0;
+            background-image: linear-gradient(oklch(0.60 0.26 10 / 0.07) 1px, transparent 1px),
+                              linear-gradient(90deg, oklch(0.60 0.26 10 / 0.07) 1px, transparent 1px);
+            background-size: 32px 32px;
+          "></div>
+
+          <!-- Robot "figure" built from pure CSS shapes -->
+          <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;">
+            <!-- Head -->
+            <div style="
+              width:80px; height:72px; border-radius:18px;
+              background: linear-gradient(160deg, oklch(0.22 0.04 280), oklch(0.15 0.03 280));
+              border: 1.5px solid oklch(0.60 0.26 10 / 0.6);
+              box-shadow: 0 0 24px 4px oklch(0.60 0.26 10 / 0.3), inset 0 0 16px oklch(0.60 0.26 10 / 0.15);
+              position: relative;
+              display:flex; align-items:center; justify-content:center; gap:16px;
+            ">
+              <!-- Eyes -->
+              <div style="width:14px;height:14px;border-radius:50%;background:oklch(0.87 0.20 88);box-shadow:0 0 12px 4px oklch(0.87 0.20 88 / 0.8);"></div>
+              <div style="width:14px;height:14px;border-radius:50%;background:oklch(0.87 0.20 88);box-shadow:0 0 12px 4px oklch(0.87 0.20 88 / 0.8);"></div>
+              <!-- Antenna -->
+              <div style="position:absolute;top:-24px;left:50%;transform:translateX(-50%);width:3px;height:20px;background:oklch(0.60 0.26 10);border-radius:2px;">
+                <div style="width:9px;height:9px;border-radius:50%;background:oklch(0.60 0.26 10);box-shadow:0 0 10px 3px oklch(0.60 0.26 10 / 0.9);position:absolute;top:-8px;left:-3px;"></div>
+              </div>
+            </div>
+            <!-- Neck -->
+            <div style="width:20px;height:10px;background:oklch(0.18 0.03 280);border-radius:3px;border:1px solid oklch(0.60 0.26 10 / 0.4);"></div>
+            <!-- Torso -->
+            <div style="
+              width:120px;height:100px;border-radius:16px;
+              background: linear-gradient(160deg, oklch(0.20 0.04 280), oklch(0.13 0.02 280));
+              border: 1.5px solid oklch(0.87 0.20 88 / 0.5);
+              box-shadow: 0 0 20px 3px oklch(0.87 0.20 88 / 0.25), inset 0 0 20px oklch(0.87 0.20 88 / 0.08);
+              display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+            ">
+              <!-- Chest panel -->
+              <div style="width:70px;height:24px;border-radius:6px;background:oklch(0.12 0.02 280);border:1px solid oklch(0.60 0.26 10 / 0.5);display:flex;align-items:center;justify-content:center;gap:6px;">
+                <div style="width:6px;height:6px;border-radius:50%;background:oklch(0.60 0.26 10);box-shadow:0 0 6px oklch(0.60 0.26 10);"></div>
+                <div style="width:6px;height:6px;border-radius:50%;background:oklch(0.87 0.20 88);box-shadow:0 0 6px oklch(0.87 0.20 88);"></div>
+                <div style="width:6px;height:6px;border-radius:50%;background:oklch(0.72 0.18 200);box-shadow:0 0 6px oklch(0.72 0.18 200);"></div>
+              </div>
+              <!-- LED strip -->
+              <div style="width:80px;height:6px;border-radius:3px;background:linear-gradient(90deg, oklch(0.60 0.26 10), oklch(0.87 0.20 88));box-shadow:0 0 10px 2px oklch(0.87 0.20 88 / 0.6);"></div>
+            </div>
+            <!-- Hips -->
+            <div style="width:90px;height:16px;border-radius:6px;background:oklch(0.16 0.03 280);border:1px solid oklch(0.60 0.26 10 / 0.35);"></div>
+            <!-- Legs -->
+            <div style="display:flex;gap:14px;">
+              <div style="width:38px;height:60px;border-radius:8px 8px 10px 10px;background:linear-gradient(180deg, oklch(0.19 0.035 280), oklch(0.14 0.025 280));border:1.5px solid oklch(0.60 0.26 10 / 0.4);box-shadow:inset 0 0 10px oklch(0.60 0.26 10 / 0.1);"></div>
+              <div style="width:38px;height:60px;border-radius:8px 8px 10px 10px;background:linear-gradient(180deg, oklch(0.19 0.035 280), oklch(0.14 0.025 280));border:1.5px solid oklch(0.60 0.26 10 / 0.4);box-shadow:inset 0 0 10px oklch(0.60 0.26 10 / 0.1);"></div>
+            </div>
+          </div>
+
+          <!-- Top label -->
+          <div style="
+            position:absolute; top:16px; left:50%; transform:translateX(-50%);
+            background: oklch(0.60 0.26 10 / 0.9);
+            color: white; font-size:10px; font-weight:700; letter-spacing:0.15em;
+            padding:4px 12px; border-radius:20px;
+            font-family: var(--font-body);
+            white-space: nowrap;
+          ">LED MODEL X-7</div>
+
+          <!-- Bottom label -->
+          <div style="
+            position:absolute; bottom:16px; left:50%; transform:translateX(-50%);
+            font-size:11px; font-weight:600; letter-spacing:0.1em;
+            color: oklch(0.87 0.20 88);
+            font-family: var(--font-body);
+            white-space: nowrap;
+            text-shadow: 0 0 12px oklch(0.87 0.20 88 / 0.8);
+          ">★ Available Now</div>
+        </div>
+
+        <!-- Floating tag 1 -->
+        <div class="animate-slide-left delay-300 absolute top-8 -left-4 lg:left-0 rounded-xl px-4 py-3 text-sm font-semibold backdrop-blur-sm" style="
+          background: oklch(0.12 0.025 280 / 0.9);
+          border: 1px solid oklch(0.87 0.20 88 / 0.45);
+          color: oklch(0.87 0.20 88);
+          box-shadow: 0 0 20px oklch(0.87 0.20 88 / 0.2);
+          font-family: var(--font-body);
+        ">
+          🎉 50+ Cities Covered
+        </div>
+
+        <!-- Floating tag 2 -->
+        <div class="animate-slide-left delay-500 absolute bottom-16 -left-4 lg:left-4 rounded-xl px-4 py-3 text-sm font-semibold backdrop-blur-sm" style="
+          background: oklch(0.12 0.025 280 / 0.9);
+          border: 1px solid oklch(0.60 0.26 10 / 0.45);
+          color: oklch(0.82 0.14 10);
+          box-shadow: 0 0 20px oklch(0.60 0.26 10 / 0.2);
+          font-family: var(--font-body);
+        ">
+          ⚡ Instant Quote
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom fade -->
+    <div class="absolute bottom-0 left-0 right-0 h-32 pointer-events-none" style="background: linear-gradient(to bottom, transparent, oklch(0.09 0.02 280));"></div>
+  </section>
+
+
+  <!-- =====================================================================
+       TICKER BAR
+       ===================================================================== -->
+  <div class="relative overflow-hidden py-4" style="background: oklch(0.12 0.025 280); border-top: 1px solid oklch(0.60 0.26 10 / 0.25); border-bottom: 1px solid oklch(0.60 0.26 10 / 0.25);">
+    <div class="animate-ticker flex gap-12 whitespace-nowrap" style="width: max-content;">
+      {[
+        '🎂 Birthday Parties', '💒 Weddings', '🎊 Quinceañeras', '🏢 Corporate Events',
+        '🎉 Sweet 16s', '🥂 Galas', '🎓 Grad Parties', '🎪 Brand Activations',
+        '🎂 Birthday Parties', '💒 Weddings', '🎊 Quinceañeras', '🏢 Corporate Events',
+        '🎉 Sweet 16s', '🥂 Galas', '🎓 Grad Parties', '🎪 Brand Activations',
+      ].map((item) => (
+        <span class="text-sm font-semibold tracking-wide" style="color: oklch(0.65 0.01 280); font-family: var(--font-body);">
+          {item}
+        </span>
+      ))}
+    </div>
+  </div>
+
+
+  <!-- =====================================================================
+       SOCIAL PROOF STATS
+       ===================================================================== -->
+  <section class="py-20 md:py-24" style="background: oklch(0.09 0.02 280);">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+        {[
+          { number: '500+', label: 'Events Electrified', color: 'oklch(0.60 0.26 10)' },
+          { number: '50+',  label: 'Cities Covered',    color: 'oklch(0.87 0.20 88)' },
+          { number: '4.9★', label: 'Average Rating',    color: 'oklch(0.72 0.18 200)' },
+          { number: '24h',  label: 'Booking Response',  color: 'oklch(0.60 0.26 10)' },
+        ].map((stat) => (
+          <div class="text-center group">
+            <p class="font-display leading-none" style={`font-size: clamp(2.4rem, 5vw, 3.5rem); color: ${stat.color}; text-shadow: 0 0 32px ${stat.color.replace(')', ' / 0.55)')};`}>
+              {stat.number}
+            </p>
+            <p class="mt-3 text-sm font-medium tracking-wide uppercase" style="color: oklch(0.55 0.01 280); font-family: var(--font-body);">{stat.label}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section id="cta" class="py-20 md:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="rounded-2xl bg-brand-500 p-10 md:p-16 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white font-display">Ready to get started?</h2>
-        <p class="mt-4 text-lg text-white/80 max-w-xl mx-auto">Get in touch and see what we can do for you.</p>
-        <a href="mailto:hello@example.com" class="mt-8 inline-block px-8 py-3.5 bg-white text-surface-900 font-semibold rounded-lg hover:bg-surface-100 transition-colors text-base">
-          Contact Us
-        </a>
+  <!-- Beam divider -->
+  <div class="beam-divider mx-auto max-w-4xl"></div>
+
+
+  <!-- =====================================================================
+       HOW IT WORKS
+       ===================================================================== -->
+  <section id="how-it-works" class="py-24 md:py-32" style="background: oklch(0.09 0.02 280);">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16">
+        <p class="text-xs font-bold tracking-[0.25em] uppercase mb-4" style="color: oklch(0.87 0.20 88);">The Process</p>
+        <h2 class="font-display leading-tight" style="font-size: clamp(2rem, 4.5vw, 3.25rem); color: oklch(0.95 0.005 280);">
+          Robot at your party in<br><span class="gradient-text">3 easy steps</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 relative">
+        <!-- Connector line (desktop) -->
+        <div class="hidden md:block absolute top-10 left-[22%] right-[22%] h-px" style="background: linear-gradient(90deg, oklch(0.60 0.26 10 / 0.5), oklch(0.87 0.20 88 / 0.5));"></div>
+
+        {[
+          {
+            step: '01',
+            title: 'Pick Your Robot',
+            desc: 'Choose from our LED Dancer, Humanoid Host, or Premium Show duo. Get an instant transparent quote — no calls required.',
+            icon: '🤖',
+            color: 'oklch(0.60 0.26 10)',
+          },
+          {
+            step: '02',
+            title: 'Book in Minutes',
+            desc: 'Lock in your date with a simple online booking. We confirm within 2 hours and handle all the logistics for your event.',
+            icon: '📅',
+            color: 'oklch(0.87 0.20 88)',
+          },
+          {
+            step: '03',
+            title: 'Watch Jaws Drop',
+            desc: 'Our team arrives early, sets up, and our robot steals the show. Guests will be posting clips for weeks.',
+            icon: '🎉',
+            color: 'oklch(0.72 0.18 200)',
+          },
+        ].map((item, i) => (
+          <div class="relative rounded-2xl p-8" style={`
+            background: oklch(0.11 0.02 280);
+            border: 1px solid ${item.color.replace(')', ' / 0.3)')};
+          `}>
+            <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-6" style={`
+              background: ${item.color.replace(')', ' / 0.12)')};
+              border: 1px solid ${item.color.replace(')', ' / 0.4)')};
+              box-shadow: 0 0 20px ${item.color.replace(')', ' / 0.2)')};
+            `}>
+              {item.icon}
+            </div>
+            <div class="absolute top-8 right-8 font-display text-5xl leading-none font-black opacity-10" style={`color: ${item.color};`}>
+              {item.step}
+            </div>
+            <h3 class="font-display text-xl mb-3" style={`color: ${item.color};`}>{item.title}</h3>
+            <p class="text-base leading-relaxed" style="color: oklch(0.62 0.01 280); font-family: var(--font-body);">{item.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
+
+  <!-- Beam divider -->
+  <div class="beam-divider mx-auto max-w-4xl"></div>
+
+
+  <!-- =====================================================================
+       ROBOT PACKAGES (Product Feature Deep-Dives)
+       ===================================================================== -->
+  <section id="packages" class="py-24 md:py-32 relative overflow-hidden" style="background: oklch(0.09 0.02 280);">
+    <!-- Background glow -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div style="position:absolute; width:60vw; height:60vw; top:20%; left:50%; transform:translateX(-50%); background:radial-gradient(ellipse at center, oklch(0.60 0.26 10 / 0.07) 0%, transparent 70%); filter:blur(20px);"></div>
+    </div>
+
+    <div class="relative max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16">
+        <p class="text-xs font-bold tracking-[0.25em] uppercase mb-4" style="color: oklch(0.87 0.20 88);">Robot Packages</p>
+        <h2 class="font-display leading-tight" style="font-size: clamp(2rem, 4.5vw, 3.25rem); color: oklch(0.95 0.005 280);">
+          Find your perfect<br><span class="gradient-text">party robot</span>
+        </h2>
+        <p class="mt-5 text-lg max-w-xl mx-auto" style="color: oklch(0.62 0.01 280); font-family: var(--font-body);">
+          Every package includes setup, operation by our trained technician, and social media-ready moments.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+
+        <!-- Package 1: LED Dancer -->
+        <div class="rounded-2xl overflow-hidden flex flex-col group transition-transform duration-300 hover:-translate-y-2" style="
+          background: oklch(0.11 0.025 280);
+          border: 1px solid oklch(0.16 0.025 280);
+          box-shadow: 0 4px 32px oklch(0.09 0.02 280 / 0.5);
+        ">
+          <!-- Top accent bar -->
+          <div style="height:4px; background: linear-gradient(90deg, oklch(0.60 0.26 10), oklch(0.82 0.14 10 / 0.5));"></div>
+          <div class="p-8 flex flex-col flex-1">
+            <div class="text-4xl mb-4">🕺</div>
+            <h3 class="font-display text-2xl mb-2" style="color: oklch(0.82 0.14 10);">LED Dancer</h3>
+            <p class="text-sm font-semibold uppercase tracking-widest mb-4" style="color: oklch(0.55 0.01 280); font-family: var(--font-body);">Best for Birthdays & Quinceañeras</p>
+            <p class="text-base leading-relaxed mb-6 flex-1" style="color: oklch(0.65 0.01 280); font-family: var(--font-body);">
+              A fully-costumed LED suit robot that dances with guests, poses for photos, and lights up your dance floor. Synchronized to your playlist.
+            </p>
+            <ul class="space-y-2 mb-8" style="font-family: var(--font-body);">
+              {['3-hour performance window', 'Unlimited photo ops', 'Custom LED color matching', 'Pro technician on-site'].map(f => (
+                <li class="flex items-center gap-2 text-sm" style="color: oklch(0.70 0.01 280);">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="14" height="14" style="color: oklch(0.60 0.26 10); flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-auto">
+              <p class="text-3xl font-display mb-1" style="color: oklch(0.95 0.005 280);">From <span style="color: oklch(0.82 0.14 10);">$499</span></p>
+              <p class="text-xs mb-5" style="color: oklch(0.50 0.01 280); font-family: var(--font-body);">3-hour package · travel fees may apply</p>
+              <a href="#book" class="block text-center py-3 px-6 rounded-xl font-semibold text-sm transition-all duration-200 hover:opacity-90" style="background: oklch(0.60 0.26 10 / 0.18); border: 1px solid oklch(0.60 0.26 10 / 0.5); color: oklch(0.82 0.14 10); font-family: var(--font-body);">
+                Get Instant Quote →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2: Humanoid Host (featured) -->
+        <div class="rounded-2xl overflow-hidden flex flex-col group transition-transform duration-300 hover:-translate-y-2 relative" style="
+          background: oklch(0.12 0.025 280);
+          border: 1px solid oklch(0.87 0.20 88 / 0.4);
+          box-shadow: 0 0 0 1px oklch(0.87 0.20 88 / 0.1), 0 8px 40px oklch(0.87 0.20 88 / 0.12), 0 4px 32px oklch(0.09 0.02 280 / 0.5);
+        ">
+          <!-- Featured badge -->
+          <div class="absolute top-5 right-5 z-10 px-3 py-1 rounded-full text-xs font-bold" style="background: oklch(0.87 0.20 88); color: oklch(0.09 0.02 280); font-family: var(--font-body);">MOST POPULAR</div>
+          <!-- Top accent bar -->
+          <div style="height:4px; background: linear-gradient(90deg, oklch(0.87 0.20 88), oklch(0.93 0.16 88 / 0.5));"></div>
+          <div class="p-8 flex flex-col flex-1">
+            <div class="text-4xl mb-4">🤖</div>
+            <h3 class="font-display text-2xl mb-2" style="color: oklch(0.87 0.20 88);">Humanoid Host</h3>
+            <p class="text-sm font-semibold uppercase tracking-widest mb-4" style="color: oklch(0.55 0.01 280); font-family: var(--font-body);">Best for Weddings & Corporate</p>
+            <p class="text-base leading-relaxed mb-6 flex-1" style="color: oklch(0.65 0.01 280); font-family: var(--font-body);">
+              A lifelike humanoid robot that greets guests, announces events, and interacts with your audience. The ultimate conversation starter at any upscale event.
+            </p>
+            <ul class="space-y-2 mb-8" style="font-family: var(--font-body);">
+              {['4-hour performance window', 'Custom scripted announcements', 'Guest interaction & Q&A mode', 'Professional handler included', 'Photo & video package'].map(f => (
+                <li class="flex items-center gap-2 text-sm" style="color: oklch(0.70 0.01 280);">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="14" height="14" style="color: oklch(0.87 0.20 88); flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-auto">
+              <p class="text-3xl font-display mb-1" style="color: oklch(0.95 0.005 280);">From <span style="color: oklch(0.87 0.20 88);">$899</span></p>
+              <p class="text-xs mb-5" style="color: oklch(0.50 0.01 280); font-family: var(--font-body);">4-hour package · travel fees may apply</p>
+              <a href="#book" class="block text-center py-3 px-6 rounded-xl font-semibold text-sm transition-all duration-200 hover:opacity-90" style="background: oklch(0.87 0.20 88); color: oklch(0.09 0.02 280); font-family: var(--font-body); box-shadow: 0 0 20px oklch(0.87 0.20 88 / 0.3);">
+                Get Instant Quote →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 3: Premium Duo Show -->
+        <div class="rounded-2xl overflow-hidden flex flex-col group transition-transform duration-300 hover:-translate-y-2" style="
+          background: oklch(0.11 0.025 280);
+          border: 1px solid oklch(0.16 0.025 280);
+          box-shadow: 0 4px 32px oklch(0.09 0.02 280 / 0.5);
+        ">
+          <!-- Top accent bar -->
+          <div style="height:4px; background: linear-gradient(90deg, oklch(0.72 0.18 200), oklch(0.72 0.18 200 / 0.5));"></div>
+          <div class="p-8 flex flex-col flex-1">
+            <div class="text-4xl mb-4">✨</div>
+            <h3 class="font-display text-2xl mb-2" style="color: oklch(0.72 0.18 200);">Premium Duo Show</h3>
+            <p class="text-sm font-semibold uppercase tracking-widest mb-4" style="color: oklch(0.55 0.01 280); font-family: var(--font-body);">Best for Large Events & Galas</p>
+            <p class="text-base leading-relaxed mb-6 flex-1" style="color: oklch(0.65 0.01 280); font-family: var(--font-body);">
+              Two robots working in tandem — an LED dancer and a humanoid host. Choreographed routines, maximum crowd interaction, and a full evening of spectacle.
+            </p>
+            <ul class="space-y-2 mb-8" style="font-family: var(--font-body);">
+              {['5-hour performance window', 'Choreographed duo routines', 'VIP photo booth setup', 'Dedicated event coordinator', 'Highlight reel included'].map(f => (
+                <li class="flex items-center gap-2 text-sm" style="color: oklch(0.70 0.01 280);">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="14" height="14" style="color: oklch(0.72 0.18 200); flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <div class="mt-auto">
+              <p class="text-3xl font-display mb-1" style="color: oklch(0.95 0.005 280);">From <span style="color: oklch(0.72 0.18 200);">$1,499</span></p>
+              <p class="text-xs mb-5" style="color: oklch(0.50 0.01 280); font-family: var(--font-body);">5-hour package · travel fees may apply</p>
+              <a href="#book" class="block text-center py-3 px-6 rounded-xl font-semibold text-sm transition-all duration-200 hover:opacity-90" style="background: oklch(0.72 0.18 200 / 0.18); border: 1px solid oklch(0.72 0.18 200 / 0.5); color: oklch(0.72 0.18 200); font-family: var(--font-body);">
+                Get Instant Quote →
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Beam divider -->
+  <div class="beam-divider mx-auto max-w-4xl"></div>
+
+
+  <!-- =====================================================================
+       TESTIMONIALS / SOCIAL PROOF
+       ===================================================================== -->
+  <section class="py-24 md:py-32" style="background: oklch(0.09 0.02 280);">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16">
+        <p class="text-xs font-bold tracking-[0.25em] uppercase mb-4" style="color: oklch(0.87 0.20 88);">What Hosts Are Saying</p>
+        <h2 class="font-display leading-tight" style="font-size: clamp(1.75rem, 4vw, 3rem); color: oklch(0.95 0.005 280);">
+          The robot <span class="gradient-text">stole the show</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {[
+          {
+            quote: "Everyone at my daughter's quinceañera could NOT stop talking about the robot. It danced with her for the waltz — I cried laughing. Worth every penny.",
+            name: "Maria G.",
+            event: "Quinceañera · Miami, FL",
+            stars: 5,
+          },
+          {
+            quote: "We used the Humanoid Host for our product launch gala. Guests were taking selfies all night and posting them immediately. Our brand trended locally.",
+            name: "James K.",
+            event: "Corporate Gala · Austin, TX",
+            stars: 5,
+          },
+          {
+            quote: "My son's 16th birthday — I've never seen 40 teenagers so excited. The robot started a dance battle. Booking them again for the Sweet 16 sequel.",
+            name: "Tanya R.",
+            event: "Sweet 16 · Los Angeles, CA",
+            stars: 5,
+          },
+        ].map((t) => (
+          <div class="rounded-2xl p-7" style="background: oklch(0.11 0.02 280); border: 1px solid oklch(0.16 0.025 280);">
+            <div class="flex gap-1 mb-5">
+              {[1,2,3,4,5].map(() => (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" style="color: oklch(0.87 0.20 88);"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd"/></svg>
+              ))}
+            </div>
+            <p class="text-base leading-relaxed mb-6" style="color: oklch(0.72 0.01 280); font-family: var(--font-body);">"{t.quote}"</p>
+            <div>
+              <p class="font-semibold text-sm" style="color: oklch(0.90 0.005 280); font-family: var(--font-body);">{t.name}</p>
+              <p class="text-xs mt-0.5" style="color: oklch(0.50 0.01 280); font-family: var(--font-body);">{t.event}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Beam divider -->
+  <div class="beam-divider mx-auto max-w-4xl"></div>
+
+
+  <!-- =====================================================================
+       WHY ROBOFÊTE  (Comparison / Why Us)
+       ===================================================================== -->
+  <section class="py-24 md:py-32" style="background: oklch(0.09 0.02 280);">
+    <div class="max-w-5xl mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16">
+        <p class="text-xs font-bold tracking-[0.25em] uppercase mb-4" style="color: oklch(0.87 0.20 88);">Why RoboFête</p>
+        <h2 class="font-display leading-tight" style="font-size: clamp(1.75rem, 4vw, 3rem); color: oklch(0.95 0.005 280);">
+          Not your average<br><span class="gradient-text">entertainment booking</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        {[
+          {
+            icon: '⚡',
+            title: 'Instant Quote, No Phone Tag',
+            desc: 'Pick your robot, enter your event details, and get a real price in seconds. No forms to wait on, no callbacks.',
+            color: 'oklch(0.60 0.26 10)',
+          },
+          {
+            icon: '💡',
+            title: 'Show-Stopping Visual Entertainment',
+            desc: 'Unlike a DJ or photo booth, a robot creates active, moving, social-media-worthy spectacle that guests can interact with.',
+            color: 'oklch(0.87 0.20 88)',
+          },
+          {
+            icon: '🔒',
+            title: 'Fully Transparent Pricing',
+            desc: 'No surprise fees, no "call us for pricing." What you see is what you pay — package price + travel if applicable.',
+            color: 'oklch(0.72 0.18 200)',
+          },
+          {
+            icon: '🎯',
+            title: 'Professional From Setup to Strike',
+            desc: 'Our trained robot handlers arrive early, set up quietly, and make sure the performance goes perfectly every time.',
+            color: 'oklch(0.60 0.26 10)',
+          },
+        ].map((item) => (
+          <div class="flex gap-5 rounded-2xl p-7" style="background: oklch(0.11 0.02 280); border: 1px solid oklch(0.16 0.025 280);">
+            <div class="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style={`background: ${item.color.replace(')', ' / 0.12)')}; border: 1px solid ${item.color.replace(')', ' / 0.35)')};`}>
+              {item.icon}
+            </div>
+            <div>
+              <h3 class="font-display text-lg mb-2" style={`color: ${item.color};`}>{item.title}</h3>
+              <p class="text-base leading-relaxed" style="color: oklch(0.62 0.01 280); font-family: var(--font-body);">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================================
+       FINAL CTA
+       ===================================================================== -->
+  <section id="book" class="py-24 md:py-32 relative overflow-hidden" style="background: oklch(0.09 0.02 280);">
+    <!-- CTA background glow -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div style="position:absolute; width:80vw; height:80vw; top:50%; left:50%; transform:translate(-50%,-50%); background:radial-gradient(ellipse at center, oklch(0.60 0.26 10 / 0.14) 0%, oklch(0.87 0.20 88 / 0.06) 40%, transparent 70%); filter:blur(10px);"></div>
+    </div>
+
+    <div class="relative max-w-4xl mx-auto px-6 lg:px-10 text-center">
+      <p class="text-xs font-bold tracking-[0.25em] uppercase mb-6" style="color: oklch(0.87 0.20 88);">Ready to Blow Minds?</p>
+      <h2 class="font-display leading-tight mb-6" style="font-size: clamp(2.25rem, 5.5vw, 4rem); color: oklch(0.95 0.005 280);">
+        Make your event<br>
+        <span class="gradient-text text-glow-pink">completely unforgettable</span>
+      </h2>
+      <p class="text-xl mb-10 max-w-xl mx-auto" style="color: oklch(0.65 0.01 280); font-family: var(--font-body);">
+        Dates book fast — especially for weekends in summer and the holiday season. Secure your robot now.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="mailto:hello@robofete.com"
+          class="animate-pulse-glow inline-flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-lg text-white transition-all duration-200 hover:scale-105"
+          style="background: oklch(0.60 0.26 10); font-family: var(--font-body); font-size: 1.1rem;"
+        >
+          Book My Robot Now
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+        </a>
+        <a href="tel:+18005550199" class="inline-flex items-center gap-2 px-8 py-5 rounded-xl font-semibold text-base transition-all duration-200 hover:opacity-80" style="color: oklch(0.75 0.01 280); border: 1px solid oklch(0.75 0.01 280 / 0.3); font-family: var(--font-body);">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+          Call us: 1-800-555-0199
+        </a>
+      </div>
+      <p class="mt-6 text-sm" style="color: oklch(0.50 0.01 280); font-family: var(--font-body);">
+        Response within 2 hours · No deposit to hold your date · Free cancellation 30+ days out
+      </p>
+    </div>
+  </section>
+
 </Base>

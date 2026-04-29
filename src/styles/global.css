@@ -1,62 +1,129 @@
-/* GOOGLE FONTS — Add @import url("https://fonts.googleapis.com/css2?...")
-   lines HERE, ABOVE @import "tailwindcss". CSS spec: every @import must
-   appear before any other rule (incl. @theme, @keyframes). A misplaced
-   @import will fail the build (`@import rules must precede all rules`). */
+/* GOOGLE FONTS — must be FIRST, before any other rule */
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black:wght@400&family=Barlow:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 /* -----------------------------------------------------------------------
-   Design Tokens — customize these to change the entire site's look.
-   The Product Agent should edit this @theme block to match the business:
-   - Swap fonts (add Google Fonts @import at the very TOP of this file,
-     then update --font-display / --font-body below)
-   - Change brand colors to match the business personality
-   - Flip surface colors for dark theme (swap light/dark values)
+   Design Tokens — RoboFête
+   Dark midnight theme with electric rose + gold accents
    ----------------------------------------------------------------------- */
 
 @theme {
-  /* Typography — replace with distinctive Google Fonts for the business */
-  --font-display: ui-sans-serif, system-ui, sans-serif;
-  --font-body: ui-sans-serif, system-ui, sans-serif;
+  /* Typography */
+  --font-display: 'Archivo Black', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Barlow', ui-sans-serif, system-ui, sans-serif;
 
-  /* Brand color scale — agent should customize per business */
-  --color-brand-50: oklch(0.97 0.01 250);
-  --color-brand-100: oklch(0.93 0.02 250);
-  --color-brand-200: oklch(0.87 0.04 250);
-  --color-brand-400: oklch(0.70 0.12 250);
-  --color-brand-500: oklch(0.60 0.16 250);
-  --color-brand-600: oklch(0.50 0.16 250);
+  /* Brand color scale — electric rose */
+  --color-brand-50:  oklch(0.97 0.03 10);
+  --color-brand-100: oklch(0.92 0.07 10);
+  --color-brand-200: oklch(0.82 0.14 10);
+  --color-brand-400: oklch(0.68 0.22 10);
+  --color-brand-500: oklch(0.60 0.26 10);
+  --color-brand-600: oklch(0.50 0.26 10);
 
-  /* Surface colors — light theme defaults. Flip for dark theme:
-     surface-50 becomes near-black, surface-900 becomes near-white */
-  --color-surface-50: oklch(0.985 0.002 250);
-  --color-surface-100: oklch(0.96 0.004 250);
-  --color-surface-200: oklch(0.92 0.006 250);
-  --color-surface-800: oklch(0.30 0.015 250);
-  --color-surface-900: oklch(0.20 0.015 250);
-  --color-surface-950: oklch(0.14 0.012 250);
+  /* Accent color scale — electric gold */
+  --color-accent-300: oklch(0.93 0.16 88);
+  --color-accent-400: oklch(0.87 0.20 88);
+  --color-accent-500: oklch(0.80 0.20 88);
+
+  /* Surface colors — dark theme (midnight deep) */
+  --color-surface-50:  oklch(0.09 0.02 280);
+  --color-surface-100: oklch(0.12 0.025 280);
+  --color-surface-200: oklch(0.16 0.025 280);
+  --color-surface-800: oklch(0.78 0.01 280);
+  --color-surface-900: oklch(0.88 0.008 280);
+  --color-surface-950: oklch(0.95 0.005 280);
 }
 
-/* Page-load animations — CSS only, no JS required */
+/* -----------------------------------------------------------------------
+   Base
+   ----------------------------------------------------------------------- */
+body {
+  background-color: oklch(0.09 0.02 280);
+  color: oklch(0.95 0.005 280);
+}
+
+/* -----------------------------------------------------------------------
+   Animations
+   ----------------------------------------------------------------------- */
 @keyframes fadeIn {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out both;
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-.animate-slide-up {
-  animation: slideUp 0.6s ease-out both;
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
-/* Staggered animation delays for cascading reveals */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 24px 4px oklch(0.60 0.26 10 / 0.45); }
+  50%       { box-shadow: 0 0 40px 10px oklch(0.60 0.26 10 / 0.65); }
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50%       { transform: translateY(-18px) scale(1.04); }
+}
+
+.animate-fade-in     { animation: fadeIn 0.7s ease-out both; }
+.animate-slide-up    { animation: slideUp 0.7s ease-out both; }
+.animate-slide-left  { animation: slideInLeft 0.7s ease-out both; }
+.animate-ticker      { animation: ticker 28s linear infinite; }
+.animate-pulse-glow  { animation: pulseGlow 2.4s ease-in-out infinite; }
+.animate-float-orb   { animation: floatOrb 7s ease-in-out infinite; }
+
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
 .delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* -----------------------------------------------------------------------
+   Utility helpers
+   ----------------------------------------------------------------------- */
+
+/* Neon text glow */
+.text-glow-pink {
+  text-shadow: 0 0 24px oklch(0.60 0.26 10 / 0.70),
+               0 0 48px oklch(0.60 0.26 10 / 0.35);
+}
+.text-glow-gold {
+  text-shadow: 0 0 20px oklch(0.87 0.20 88 / 0.70),
+               0 0 40px oklch(0.87 0.20 88 / 0.35);
+}
+
+/* Neon border glow */
+.glow-border-pink {
+  box-shadow: 0 0 0 1px oklch(0.60 0.26 10 / 0.6),
+              0 0 24px 2px oklch(0.60 0.26 10 / 0.35);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, oklch(0.60 0.26 10), oklch(0.87 0.20 88));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section divider beam */
+.beam-divider {
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    oklch(0.60 0.26 10 / 0.6) 30%,
+    oklch(0.87 0.20 88 / 0.6) 60%,
+    transparent 100%
+  );
+}

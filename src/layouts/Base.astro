@@ -8,7 +8,7 @@ interface Props {
   description?: string;
 }
 
-const { title = "Your New Business", description = "Robot rentals for parties and events to entertain" } = Astro.props;
+const { title = "RoboFête — Robot Rentals for Unforgettable Parties & Events", description = "Rent jaw-dropping LED and humanoid robots for birthdays, quinceañeras, weddings, and corporate events. Instant quotes, transparent pricing, guaranteed wow factor." } = Astro.props;
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -22,14 +22,18 @@ const { title = "Your New Business", description = "Robot rentals for parties an
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Your New Business",
-      "description": "Robot rentals for parties and events to entertain",
-      "url": "https://party-robot-rentals.onrender.com"
+      "@type": "LocalBusiness",
+      "name": "RoboFête",
+      "description": "Premier robot rental experience for parties and events — LED and humanoid robots for birthdays, quinceañeras, weddings, and corporate events.",
+      "url": "https://party-robot-rentals.onrender.com",
+      "telephone": "+18005550199",
+      "email": "hello@robofete.com",
+      "slogan": "The Future of Unforgettable Parties",
+      "areaServed": "United States"
     }
     </script>
   </head>
-  <body class="min-h-screen flex flex-col bg-surface-50 text-surface-900 font-body antialiased">
+  <body class="min-h-screen flex flex-col font-body antialiased" style="background: oklch(0.09 0.02 280); color: oklch(0.95 0.005 280);">
     <Header />
     <main class="flex-1">
       <slot />
